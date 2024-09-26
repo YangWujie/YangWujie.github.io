@@ -8,4 +8,6 @@ draft = false
 
 This is **bold** text, and this is *emphasized* text.
 
+This is a mark.
+
 Visit the [Hugo](https://gohugo.io) website!
