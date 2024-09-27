@@ -63,7 +63,7 @@ The numbers are equal
 ```
 还是
 ```C
-    if (abs(divisor) < 1e-9>)
+    if (abs(divisor) < 1e-9))
 ```
 更合适？
 
