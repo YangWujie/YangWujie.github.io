@@ -11,3 +11,7 @@ theme = 'ananke'
     workingFolderCurrent = true
     [markup.asciidocExt.attributes]
       source-highlighter = 'rouge'
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
