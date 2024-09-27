@@ -5,3 +5,9 @@ theme = 'ananke'
 
 [security.exec]
     allow = ['^asciidoctor$']
+
+[markup]
+  [markup.asciidocExt]
+    workingFolderCurrent = true
+    [markup.asciidocExt.attributes]
+      source-highlighter = 'rouge'

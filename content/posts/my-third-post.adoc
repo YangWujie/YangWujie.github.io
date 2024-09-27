@@ -1,0 +1,42 @@
+---
+title: "C语言中的整数运算"
+date: 2024-09-27T14:48:43+08:00
+draft: false
+---
+
+== 从一道练习题说起
+:source-highlighter: rouge
+
+刚开始学习C语言，老师布置了一道题：
+
+.推算钟点
+____
+若告诉你现在的时间，请问过若干分钟后是什么时间？
+
+请编写程序，输入现在的时间(小时数、分钟数)和所过的时间(分钟数)，计算并输出未来的时间(时、分)。
+____
+
+题目看似并不困难，根据输入输出格式的要求，很快就写出了程序：
+
+[source,c]
+--
+#include <stdio.h>
+
+int main(void)
+{
+    int hour, minute, pass;
+    scanf("%d:%d", &hour, &minute);
+    scanf("%d", &pass);
+
+    minute += pass;
+    hour += (minute / 60);
+    minute %= 60;    
+    hour %= 24;
+    printf("%02d:%02d\n", hour, minute);
+    
+    return 0;
+}
+--
+
+参考下面的资料
+https://gohugo.io/getting-started/configuration-markup/#asciidoc[Hugo Asciidoc]，代码高亮没有搞定，暂放弃。

@@ -5,6 +5,7 @@ draft: false
 ---
 
 = A Asciidoc Document
+:source-highlighter: rouge
 
 Is this OK?
 
