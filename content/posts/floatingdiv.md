@@ -92,3 +92,55 @@ a / b = 123.000000
 ```
 
 所以，我认为判断除数是否为0时，禁用相等运算符是毫无道理的。
+
+### 补记
+
+在 [PTA](https://pintia.cn/home) 上通过的代码：
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double a, b, c, d;
+    scanf("%lf %lf %lf %lf", &a, &b, &c, &d);
+    double deno = b * c - d;
+    if (abs(deno) < 1e-100)
+    {
+        printf("error\n");
+        return 0;
+    }
+    
+    double result = a / deno;
+    printf("%.1f\n", result);
+    return 0;
+}
+```
+
+以上代码显然有缺陷，当我把缺陷修复后：
+```C
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    double a, b, c, d;
+    scanf("%lf %lf %lf %lf", &a, &b, &c, &d);
+    double deno = b * c - d;
+    if (deno == 0)
+    {
+        printf("error\n");
+        return 0;
+    }
+    
+    double result = a / deno;
+    if (isinf(result)) {
+        printf("error\n");
+        return 0;
+    }
+    
+    printf("%.1f\n", result);
+    return 0;
+}
+```
+程序却未获通过。至此可以百分百确定，这是一个错题。
